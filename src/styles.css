@@ -12,36 +12,41 @@ body {
 .header-banner {
   background-color: #000000;
   color: white;
-  padding: 10px;
+  padding: 5px;
   text-align: center;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  /* Make header the containing block for absolutely positioned children */
   position: fixed;
 }
 
-/* Search button inside header banner */
-.header-banner .search-btn {
-  position: absolute;
-  top: 20px;
-  right: 50px;
-  background-color: #f3ce13;
-  color: rgb(0, 0, 0);
-  padding: 18px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s;
+.header-banner {
+  background-color: #000000;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center everything by default */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  position: fixed;
 }
 
-.header-banner .search-btn:hover {
-  background-color: #f0d138;
-  transform: scale(1.05);
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  left: 20px;
 }
+
+.header-banner .search-btn {
+  position: absolute;
+  right: 60px;
+}
+
 
 /* Footer Banner */
 .footer-banner {
@@ -98,19 +103,8 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.top-5-container {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  margin: 20px auto; 
-  width: 80%;
-  max-width: 600px;
-  text-align: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.search-container {
+/* Film & Actor Details Panel */
+.details-panel {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -119,8 +113,69 @@ body {
   width: 90%;
   max-width: 600px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px;
+}
+
+.top-5-container {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 25px;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 52%; /* Increased width */
+  max-width: 950px; /* Slightly increased */
+  min-height: 35px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  min-width: 400px; /* Prevents it from being too small */
+}
+
+.top-5-container ul {
+  list-style: none;  /* Removes bullet points */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+}
+
+
+/* Ensuring wrapper takes full width */
+.top-5-wrapper {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px;
+}
+
+
+
+
+
+
+.search-container {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 80px auto; /* Increase margin to push it down */
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
+
 
 /* Center buttons and add spacing */
 .button-container {
@@ -174,3 +229,173 @@ body {
   background-color: #b02a37;
   transform: scale(1.05);
 }
+
+/* Customer Dashboard Styling */
+.customer-dashboard {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.customer-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.customer-table th, .customer-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.customer-table th {
+  background-color: #f3ce13;
+  color: black;
+}
+
+.customer-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin: auto;
+}
+
+.customer-form label {
+  display: block;
+  margin-top: 10px;
+}
+
+.customer-form input, .customer-form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.button-edit {
+  background-color: #17a2b8;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-edit:hover {
+  background-color: #138496;
+}
+
+.button-save {
+  background-color: #28a745;
+  color: white;
+}
+
+.button-cancel {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-cancel:hover {
+  background-color: #5a6268;
+}
+
+
+
+.pagination {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.button-show-all {
+  background-color: #28a745;
+  color: white;
+  margin-left: 10px;
+}
+
+.button-show-all:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* Red delete button */
+.button-delete {
+  background-color: #dc3545; /* Red */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.button-delete:hover {
+  background-color: #b02a37; /* Darker red on hover */
+}
+
+/* 🔹 Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* 🔹 Modal Content */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 🔹 Button Container for Modal */
+.modal-content .button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+
+
