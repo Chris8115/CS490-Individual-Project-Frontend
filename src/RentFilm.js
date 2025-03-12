@@ -7,7 +7,6 @@ const RentFilm = ({ film, onSuccess, onCancel }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Call the backend /rent_film endpoint without staff_id
     fetch("/rent_film", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

@@ -5,66 +5,9 @@ import SearchFilms from "./SearchFilms";
 import FilmDetails from "./FilmDetails";
 import CustomerPage from "./CustomerPage";
 import ActorDetails from "./ActorDetails";
+import TopRentedFilms from "./TopRentedFilms";
+import TopActors from "./TopActors";
 
-
-
-// TopRentedFilms Component
-const TopRentedFilms = ({ onFilmClick }) => {
-  const [films, setFilms] = useState([]);
-
-  useEffect(() => {
-    fetch("top_rented_films")
-      .then((response) => response.json())
-      .then((data) => setFilms(data))
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
-
-  return (
-    <div className="top-5-container">
-      <h2>Top 5 Most Rented Films</h2>
-      <ul>
-        {films.map((film, index) => (
-          <li
-            key={index}
-            onClick={() => onFilmClick(film)}
-            style={{ cursor: "pointer", color: "lightblue" }}
-          >
-            {film.title} - {film.rental_count} rentals
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-// TopActors Component
-const TopActors = ({ onActorClick }) => {
-  const [actors, setActors] = useState([]);
-
-  useEffect(() => {
-    fetch("top_actors")
-      .then((response) => response.json())
-      .then((data) => setActors(data))
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
-
-  return (
-    <div className="top-5-container">
-      <h2>Top 5 Actors of Our Inventory</h2>
-      <ul>
-        {actors.map((actor, index) => (
-          <li
-            key={index}
-            onClick={() => onActorClick(actor)}
-            style={{ cursor: "pointer", color: "lightblue" }}
-          >
-            {actor.actor_name} - {actor.film_count} films
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
 
 
 function App() {
@@ -133,33 +76,36 @@ const Header = () => {
   const location = useLocation();
   return (
     <header className="header-banner">
+      {/* Title */}
+      <h1 className="site-title">Sakila Rental Service</h1>
+
+      {/* Navigation Buttons*/}
       <div className="nav-buttons">
-        {/* Only show "Back to Home" when NOT on Home Page */}
+        {/* Back to Home */}
         {location.pathname !== "/" && (
           <Link to="/" className="button button-back">
             Back to Home
           </Link>
         )}
 
-        {/* Only show "Customer Page" when NOT on Customer Page */}
+        {/* Customer Page */}
         {location.pathname !== "/customers" && (
-          <Link to="/customers" className="button button-films">
+          <Link to="/customers" className="button button-films customer-btn">
             Customer Page
           </Link>
         )}
+
+        {/* Search Films */}
+        {location.pathname !== "/search" && (
+          <Link to="/search" className="button button-films search-btn">
+            Search Films
+          </Link>
+        )}
       </div>
-
-      <h1>Sakila Rental Service</h1>
-
-      {/* Only show "Search Films" when NOT on Search Page */}
-      {location.pathname !== "/search" && (
-        <Link to="/search" className="button button-films search-btn">
-          Search Films
-        </Link>
-      )}
     </header>
   );
 };
+
 
 
 const Footer = () => (

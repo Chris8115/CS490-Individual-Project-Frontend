@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import "./styles.css";
 
 const ReturnFilm = ({ onSuccess, onCancel }) => {
-  const [identifier, setIdentifier] = useState(""); // The ID entered by the user
-  const [returnMethod, setReturnMethod] = useState("rental"); // "rental" or "customer"
+  const [identifier, setIdentifier] = useState("");
+  const [returnMethod, setReturnMethod] = useState("rental");
   const [error, setError] = useState("");
 
   const handleReturn = () => {
-    // Build the payload based on the selected return method.
     const payload =
       returnMethod === "customer"
         ? { customer_id: identifier }

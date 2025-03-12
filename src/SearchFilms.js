@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import FilmDetails from "./FilmDetails"; // Import the separated FilmDetails component
-import "./styles.css"; // Your CSS file for styling
+import FilmDetails from "./FilmDetails";
+import "./styles.css";
 
 const SearchFilms = () => {
   const [searchType, setSearchType] = useState("film");
@@ -16,7 +16,6 @@ const SearchFilms = () => {
       .catch((err) => console.error("Error searching:", err));
   };
 
-  // If a film is selected, display its details.
   if (selectedFilm) {
     return (
       <div className="search-container">

@@ -1,24 +1,37 @@
-/* styles.css */
+body, 
+button, 
+input, 
+textarea, 
+th, 
+td, 
+p, 
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+span, 
+div {
+  user-select: none; 
+  cursor: default;
+}
 
-/* Apply a light grey background to the whole page */
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input, textarea {
+  user-select: auto;
+  cursor: text;
+}
+
 body {
   background-color: #f0f0f0;
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-}
-
-/* Header Banner */
-.header-banner {
-  background-color: #000000;
-  color: white;
-  padding: 5px;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  position: fixed;
 }
 
 .header-banner {
@@ -27,28 +40,61 @@ body {
   padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: center; /* Center everything by default */
+  justify-content: space-between;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  position: fixed;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
 }
 
 .nav-buttons {
   display: flex;
   gap: 10px;
-  position: absolute;
-  left: 20px;
+  margin-right: 65px; 
 }
 
-.header-banner .search-btn {
-  position: absolute;
-  right: 60px;
+.add-customer-btn {
+  margin-left: auto;
+  background-color: #f3cd12;
+  color: rgb(0, 0, 0);
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
+.add-customer-btn:hover {
+  background-color: #f0d138;
+}
 
-/* Footer Banner */
+.customer-btn {
+  background-color: #f0d138;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.customer-btn:hover {
+  background-color: #f0d138;
+}
+
+.search-btn {
+  background-color: #f3cd12;
+  padding: 10px 5px;
+  font-size: 14px;
+}
+
+.search-btn:hover {
+  background-color: #f0d138;
+}
+
 .footer-banner {
   background-color: #000000;
   color: white;
@@ -60,24 +106,22 @@ body {
   z-index: 1000;
 }
 
-/* Main content area to avoid overlap with header and footer */
 .content {
   padding-top: 80px; 
   padding-bottom: 80px;
 }
 
 .app-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  max-width: 600px;
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
   padding: 20px;
   box-sizing: border-box;
+  margin: 150px auto 0 auto;
+  text-align: center;
 }
 
-/* Scrollable container for the search page */
+
 .scrollable-container {
   position: relative;
   margin: 20px auto;
@@ -91,7 +135,6 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Film Details Panel */
 .film-details-panel {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -101,9 +144,9 @@ body {
   width: 90%;
   max-width: 600px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
 }
 
-/* Film & Actor Details Panel */
 .details-panel {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -113,71 +156,90 @@ body {
   width: 90%;
   max-width: 600px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: black; 
+  
 }
 
-.top-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
-  width: 100%;
-  max-width: 1400px;
-  margin: auto;
-  padding: 20px;
+
+.details-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: black; 
 }
+
+.details-panel li {
+  margin-bottom: 5px;
+  padding-left: 5px;
+  color: black; 
+}
+
 
 .top-5-container {
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
-  padding: 25px;
+  padding: 20px;
   border-radius: 10px;
-  margin: 20px auto;
-  width: 52%; /* Increased width */
-  max-width: 950px; /* Slightly increased */
-  min-height: 35px;
+  width: 48%;
   text-align: center;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  min-width: 400px; /* Prevents it from being too small */
+  min-width: 350px;
+  
 }
 
-.top-5-container ul {
-  list-style: none;  /* Removes bullet points */
-  padding: 0; /* Removes default padding */
-  margin: 0; /* Removes default margin */
+.top-5-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
 }
 
+.top-5-table th,
+.top-5-table td {
+  border: 1px solid white;
+  padding: 8px;
+  text-align: center;
+}
 
-/* Ensuring wrapper takes full width */
+.top-5-table th {
+  background-color: #333;
+  color: white;
+}
+
+.top-5-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
 .top-5-wrapper {
   display: flex;
-  justify-content: center; /* Center horizontally */
+  justify-content: center;
   align-items: flex-start;
   gap: 20px;
   width: 100%;
-  max-width: 1400px;
-  margin: auto;
+  max-width: 1200px;
+  min-width: 800px;
+  margin: 0 auto;
   padding: 20px;
 }
 
-
-
-
-
+.top-5-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
 .search-container {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
-  margin: 80px auto; /* Increase margin to push it down */
+  margin: 80px auto;
   width: 90%;
   max-width: 600px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-
-/* Center buttons and add spacing */
 .button-container {
   display: flex;
   justify-content: center;
@@ -185,21 +247,22 @@ body {
   margin: 20px 0;
 }
 
-/* General button styling */
 .button {
   padding: 18px 18px;
   font-size: 16px;
   font-weight: bold;
+  text-decoration: none;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s;
 }
 
-/* Top Films button */
 .button-films {
   background-color: #f3ce13;
   color: rgb(0, 0, 0);
+  margin-top: 15px;
+  
 }
 
 .button-films:hover {
@@ -207,7 +270,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Top Actors button */
 .button-actors {
   background-color: #f3ce13;
   color: rgb(0, 0, 0);
@@ -218,7 +280,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Back button */
 .button-back {
   background-color: #dc3545;
   color: white;
@@ -230,13 +291,12 @@ body {
   transform: scale(1.05);
 }
 
-/* Customer Dashboard Styling */
 .customer-dashboard {
   background-color: white;
   border-radius: 8px;
   padding: 20px;
   width: 90%;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 20px auto;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -245,41 +305,43 @@ body {
 .customer-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
 }
 
-.customer-table th, .customer-table td {
-  border: 1px solid #ddd;
+.customer-table th,
+.customer-table td {
+  height: 50px;
   padding: 10px;
-  text-align: left;
-}
-
-.customer-table th {
-  background-color: #f3ce13;
-  color: black;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .customer-form {
-  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   padding: 20px;
+  background-color: white;
   border-radius: 8px;
-  margin-top: 20px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  max-width: 500px;
+  width: 100%;
+  max-width: 400px;
   margin: auto;
 }
 
-.customer-form label {
-  display: block;
-  margin-top: 10px;
-}
-
-.customer-form input, .customer-form select {
+.customer-form input {
   width: 100%;
-  padding: 8px;
-  margin-top: 5px;
+  padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
+}
+
+.customer-form .button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
 .button-container {
@@ -293,9 +355,11 @@ body {
   background-color: #17a2b8;
   color: white;
   padding: 8px 12px;
+  font-size: 14;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  min-width: 40px;
 }
 
 .button-edit:hover {
@@ -305,6 +369,9 @@ body {
 .button-save {
   background-color: #28a745;
   color: white;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
 }
 
 .button-cancel {
@@ -347,9 +414,8 @@ body {
   transform: scale(1.05);
 }
 
-/* Red delete button */
 .button-delete {
-  background-color: #dc3545; /* Red */
+  background-color: #dc3545;
   color: white;
   border: none;
   border-radius: 6px;
@@ -358,44 +424,118 @@ body {
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease;
+  
 }
+
+.button-details {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  min-width: 40px;
+  background-color: #007bff;
+  color: white;
+}
+
+.button-details:hover {
+  background-color: #0056b3;
+}
+
 
 .button-delete:hover {
-  background-color: #b02a37; /* Darker red on hover */
+  background-color: #b02a37;
 }
 
-/* 🔹 Modal Overlay */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.modal-content {
+  background: white;
+  padding: 0px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-body {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px;
+  max-height: 60vh;
+}
+
+.rental-history-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  text-align: left;
+  max-height: 40vh; 
+  overflow-y: auto;
+}
+
+.rental-history-list li {
+  background: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  text-align: left;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pagination {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-/* 🔹 Modal Content */
-.modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
+.modal-header,
+.modal-footer {
   text-align: center;
-  width: 400px;
-  max-width: 90%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 10px 0;
 }
 
-/* 🔹 Button Container for Modal */
-.modal-content .button-container {
+.modal-footer {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 20px;
 }
+
+.modal-header h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+
+.pagination button {
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.modal-content h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+
+
 
 
 
